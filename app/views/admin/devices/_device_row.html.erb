@@ -1,0 +1,10 @@
+<tr>
+  <td><%= device.id.to_s %></td>
+  <td><%= device.unique_identifier %></td>
+  <td><%= device.device_model.device_manufacturer.name %></td>
+  <td><%= device.device_model.name %></td>
+  <td><%= device.mobile_operating_system_version.mobile_operating_system.name %></td>
+  <td><%= device.mobile_operating_system_version.name %></td>
+  <td><%= device.user.try(:email) || '-' %></td>
+  <td><%= device.created_at %></td>
+</tr>

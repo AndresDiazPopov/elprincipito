@@ -1,0 +1,9 @@
+<tr data-link="<%= admin_login_path(login) %>">
+  <td><%= login.id.to_s %></td>
+  <td><%= login.user.try(:email) || '-' %></td>
+  <td><%= login.try(:device).try(:device_model).try(:device_manufacturer).try(:name) %></td>
+  <td><%= login.ip %></td>
+  <td><%= login.network_type_string %></td>
+  <td><%= render 'admin/shared/badges/state_badge', object: login, state: login.state %></td>
+  <td><%= login.created_at %></td>
+</tr>

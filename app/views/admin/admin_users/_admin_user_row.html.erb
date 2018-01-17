@@ -1,0 +1,27 @@
+<% if policy(admin_user).show? %>
+<tr data-link="<%= admin_admin_user_path(admin_user) %>">
+<% else %>
+<tr>
+<% end %>
+  <td><%= admin_user.id.to_s %></td>
+  <td><%= admin_user.email || '-' %></td>
+  <td><%= admin_user.full_name || '-' %></td>
+
+  <% if policy(AdminUser).filter_by_role? %>
+    <td>
+    <% roles_count = admin_user.roles.count %>
+    <% case roles_count %>
+    <% when 0 %>
+      <%= _('Sin rol') %>
+    <% when 1 %>
+      <%= linked_role_name_for(admin_user.roles.first).html_safe %>
+    <% else %>
+      <%= linked_role_name_for(admin_user.roles.first).html_safe %>
+      (<%= _('y') + ' ' + (roles_count - 1).to_s + ' ' + _('más') %>)
+    <% end %>
+    </td>
+  <% end %>
+
+  <td><%= render 'admin/shared/badges/state_badge', object: admin_user, state: admin_user.state %></td>
+  <td><%= admin_user.created_at %></td>
+</tr>

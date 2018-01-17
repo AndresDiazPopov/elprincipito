@@ -1,0 +1,64 @@
+<% content_for :title do %>
+  <span><%= _('Peticiones al API') %></span>
+<% end %>
+
+<div class="row animated fadeInRight">
+  <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+          <div class="ibox-title">
+              <h5>
+                <%= _('Peticiones al API') %>
+              </h5>
+          </div>
+          <div class="ibox-content">
+            <%= form_tag admin_api_requests_path, method: :get do |f| %>
+              <div class="row">
+                <div class="col-md-4 form-group">
+                  <%= label_tag :user_id, _('Usuario') %>
+                  <%= collection_select(nil, :user_id, User.all.order(email: :asc), :id, :email, {include_blank: _('Cualquiera'), selected: @user_id}, {class: 'input-sm form-control'}) %>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 form-group">
+                  <%= submit_tag _('Filtrar'), class: 'btn btn-sm btn-default search-button pull-right' %>
+                </div>
+              </div>
+            <% end %>
+
+            <div class="hr-line-dashed"></div>
+            
+            <% if @api_requests.any? %>
+              <div class="table-responsive">
+                
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                      <th><%= sortable 'id', _('Id') %></th>
+                      <th><%= sortable 'logins.id', _('Login') %></th>
+                      <th><%= sortable 'users.email', _('Usuario') %></th>
+                      <th><%= sortable 'path', _('Path') %></th>
+                      <th><%= sortable 'ip', _('IP') %></th>
+                      <th><%= sortable 'network_type', _('Red') %></th>
+                      <th><%= sortable 'created_at', _('F. creación') %></th>
+                    </tr>
+                    </thead>
+                    <tbody id="api_requests">
+                      <%= render partial: 'api_request_row', collection: @api_requests, as: 'api_request' %>
+                    </tbody>
+                </table>
+
+              </div>
+            <% else %>
+              <p class="empty-p"><%= _('No hay peticiones al API') %></p>
+            <% end %>
+          </div>
+      </div>
+      <div id="page_entries_info">
+        <%= page_entries_info @api_requests, entry_name: 'api_requests' %>
+      </div>
+      <div id="paginator">
+        <%= paginate @api_requests %>
+      </div>
+    
+  </div>
+</div>

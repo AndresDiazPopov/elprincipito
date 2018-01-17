@@ -1,0 +1,23 @@
+<script>
+  $(function() {
+    showFieldForLocale = function(field_id, locale) {
+      $('.' + field_id + ' .field-value').hide();
+      $('.' + field_id + ' .field-value.' + locale).show();
+      $('.' + field_id + '.locale-link').removeClass('active');
+      $('.' + field_id + '.locale-link.' + locale).addClass('active');
+      return false;
+    }
+    $('.locale-link').on('click', function(e) {
+      e.preventDefault();
+      showFieldForLocale($(this).data('field-id'), $(this).data('locale'));
+    });
+
+    initLocales = function(locale) {
+      $('.field-value').hide();
+      $('.field-value.' + locale).show();
+      $('.locale-link').removeClass('active');
+      $('.locale-link.' + locale).addClass('active');
+    }
+    initLocales('<%= I18n.default_locale %>');
+  });
+</script>

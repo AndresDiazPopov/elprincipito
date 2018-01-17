@@ -1,0 +1,39 @@
+<% latitude = locals[:latitude] %>
+<% longitude = locals[:longitude] %>
+<dt><%= _('Latitud') %></dt> <dd><%= latitude || '-' %></dd>
+<dt><%= _('Longitud') %></dt> <dd><%= longitude || '-' %></dd>
+<dt><%= _('Mapa') %></dt> 
+<dd>
+  <% if latitude && longitude %>
+    <div class="google-map google-map-mini" id="map"></div>
+  <% else %>
+    -
+  <% end %>
+</dd>
+
+<script>
+  $(function() {
+    <% if latitude && longitude %>
+      handler = Gmaps.build('Google');
+      handler.buildMap({
+        provider: {
+          zoom: 8,
+          center: new google.maps.LatLng(<%= latitude %> , <%= longitude %>)
+        },
+        internal: {
+          id: 'map'
+        }
+      }, function() {
+        marker = new google.maps.Marker({
+          map: handler.getMap(),
+          draggable: false,
+          position: {
+            lat: <%= latitude %>,
+            lng: <%= longitude %>
+          }
+        });
+      });
+      
+    <% end %>
+  });
+</script>

@@ -1,0 +1,40 @@
+<% content_for :title do %>
+  <span><%= _('Detalles del usuario ') + @user.id.to_s %></span>
+<% end %>
+
+<div class="row animated fadeInRight">
+
+  <div class="col-sm-8">
+    <div class="ibox float-e-margins">
+      <div class="ibox-title">
+        <div class="m-b-md">
+          <div class="pull-right">
+            <div id="user_actions">
+              <%= render partial: 'actions', locals: { user: @user }, as: :user %>
+            </div>
+          </div>
+          <h2><%= _('Perfil') %> <span id="user_state_badge"><%= render 'admin/shared/badges/state_badge', object: @user, state: @user.state %></span></h2>
+        </div>
+      </div>
+      <div>
+        <div class="ibox-content no-padding border-left-right">
+          <%= image_tag @user.image.url, class: 'img-responsive' %>
+        </div>
+        <div class="ibox-content profile-content">
+
+          <h3><%= _('Datos del usuario') %></h3>
+          <dl class="dl-horizontal">
+              <dt><%= _('Email') %></dt> <dd><%= @user.email || _('Sin email') %></dd>
+          </dl>
+
+          <div class="hr-line-dashed"></div>
+          <dl class="dl-horizontal">
+              <dt><%= _('Fecha creación') %></dt> <dd><%= @user.created_at %></dd>
+              <dt><%= _('Fecha modificación') %></dt> <dd><%= @user.updated_at %></dd>
+          </dl>
+            
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

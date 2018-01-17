@@ -1,0 +1,4 @@
+$('#user_actions').html("<%= escape_javascript render partial: 'actions', locals: { user: @user } %>");
+$('#user_state_badge').html("<%= escape_javascript render 'admin/shared/badges/state_badge', object: @user, state: @user.state %>");
+
+<%= render partial: 'admin/shared/alerts/success', locals: { success_title: @success_title } %>

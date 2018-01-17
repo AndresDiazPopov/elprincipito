@@ -1,0 +1,18 @@
+<% if policy(@admin_user).edit? %>
+  <%= link_to _('Editar'), edit_admin_admin_user_path(@admin_user, role: @role), class: 'btn btn-white btn-xs' %>
+<% end %>
+
+<% if policy(@admin_user).edit_password? %>
+  <%= link_to _('Cambiar password'), edit_password_admin_admin_user_path(admin_user), class: 'btn btn-white btn-xs' %>
+<% end %>
+
+<% # Sólo permito habilitar/deshabilitar si no es el propio administrador %>
+<% if admin_user.enabled? %>
+  <% if policy(@admin_user).disable? %>
+    <%= link_to _('Deshabilitar'), disable_admin_admin_user_path(admin_user), class: 'btn btn-warning btn-xs', method: :put, format: :js, remote: true, data: {prompt: _('¿Deshabilitar administrador?'), 'close-on-confirm': false} %>
+  <% end %>
+<% else %>
+  <% if policy(@admin_user).enable? %>
+    <%= link_to _('Habilitar'), enable_admin_admin_user_path(admin_user), class: 'btn btn-primary btn-xs', method: :put, format: :js, remote: true, data: {prompt: _('¿Habilitar administrador?'), 'close-on-confirm': false} %>
+  <% end %>
+<% end %>

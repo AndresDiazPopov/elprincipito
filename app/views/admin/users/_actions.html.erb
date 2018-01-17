@@ -1,0 +1,5 @@
+<% if user.enabled? %>
+  <%= link_to _('Deshabilitar'), disable_admin_user_path(user), class: 'btn btn-warning btn-xs', method: :put, format: :js, remote: true, data: {prompt: _('¿Deshabilitar usuario?'), 'close-on-confirm': false} %>
+<% else %>
+  <%= link_to _('Habilitar'), enable_admin_user_path(user), class: 'btn btn-primary btn-xs', method: :put, format: :js, remote: true, data: {prompt: _('¿Habilitar usuario?'), 'close-on-confirm': false} %>
+<% end %>

@@ -1,0 +1,5 @@
+<% content_for :title do %>
+  <span><%= _('Editar administrador') + ' ' + @admin_user.email %></span>
+<% end %>
+
+<%= render 'form', admin_user: @admin_user %>

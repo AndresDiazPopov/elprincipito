@@ -1,0 +1,2 @@
+class LoginPolicy < ApplicationPolicy
+end

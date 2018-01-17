@@ -1,0 +1,2 @@
+class ApiRequestPolicy < ApplicationPolicy
+end

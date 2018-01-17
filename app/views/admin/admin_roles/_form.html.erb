@@ -1,0 +1,50 @@
+<div class="row">
+
+    <div class="col-md-12">
+        
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5><%= _('Añadir rol al administrador ') + admin_user.email %> <small><%= _('Si el rol está asociado a una entidad, selecciónala') %></small></h5>
+                
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <%= form_for [:admin, admin_user, admin_role] do |f| %>
+                            <% if admin_role.errors.any? %>
+                                <div class="alert alert-danger alert-dismissable">
+                                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                                    <%= _('Hay algunos errores en el formulario:') %><br>
+                                    <ul>
+                                    <% admin_role.errors.full_messages.each do |error| %>
+                                        <li>
+                                            <%= error %>
+                                        </li>
+                                    <% end %>
+                                    </ul>
+                                </div>
+                            <% end %>
+
+                            <div class="row">
+                                <div class="form-group col-sm-6 <%= 'has-error' if admin_role.errors.messages[:name] %>">
+                                    <%= f.label :name, _('Rol') %>
+                                    <%= f.select(:name, AdminRole.roles.keys.map {|role| [AdminRole.name_for(role), role]}, {}, {class: 'form-control'}) %>
+                                </div>
+                            </div>
+
+                            <div>
+
+                                <%= f.submit _('Guardar'), class: 'btn btn-sm btn-primary pull-right m-t-n-xs', data: {disable_with: _('Enviando...')} %>
+                            </div>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

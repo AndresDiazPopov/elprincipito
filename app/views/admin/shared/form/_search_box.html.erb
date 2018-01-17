@@ -1,0 +1,33 @@
+<div class="input-group">
+  <input type="text" placeholder="<%= defined?(placeholder) ? placeholder : '' %>" class="input-sm form-control search-text" value="<%= value if defined?(value) %>">
+  <span class="input-group-btn">
+    <%= link_to _('Buscar'), url, class: 'btn btn-sm btn-primary search-button' %>
+  </span>
+</div>
+
+<script type="text/javascript">
+  
+  $(function() {
+
+    // Enter key event
+    $('.search-text').bind("enterKey",function(e){
+       $('.search-button')[0].click();
+    });
+    $('.search-text').keyup(function(e){
+        if(e.keyCode == 13)
+        {
+            $(this).trigger("enterKey");
+        }
+    });
+
+    $('.search-button').on('click', function(event) {
+      text = $('.search-text').val();
+      $(".search-button").attr('href', function(i, h) {
+        textParam = 'text=' + text;
+        $(this).attr('href', h + (h.indexOf('?') != -1 ? "&" : "?") + textParam);
+      });
+    });
+
+  });
+
+</script>

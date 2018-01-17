@@ -1,0 +1,15 @@
+<dt>
+  <%= field_label %><br>
+  <% I18n.available_locales.each_with_index do |locale, index| %>
+    <small>
+      <%= link_to locale, '#', class: ' locale-link ' + locale + ' ' + field_id, data: { locale: locale, field_id: field_id } %>
+    </small>
+  <% end %>
+</dt>
+<dd class="<%= field_id %>">
+  <% I18n.available_locales.each_with_index do |locale, index| %>
+    <% Globalize.with_locale(locale) do %>
+      <div class="field-value <%= locale %>"><%= simple_format(model.send(field_name)) || '-' %></div>
+    <% end %>
+  <% end %>
+</dd>

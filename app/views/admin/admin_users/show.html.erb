@@ -1,0 +1,84 @@
+<% content_for :title do %>
+  <span><%= _('Detalles del administrador ') + @admin_user.email %></span>
+<% end %>
+
+<div class="row animated fadeInRight">
+  
+  <div class="col-sm-8">
+
+    <div class="row">
+
+      <div class="col-sm-12">
+
+        <div class="ibox float-e-margins">
+          <div class="ibox-title">
+            <div class="m-b-md">
+              <div class="pull-right">
+                <div id="admin_user_actions">
+                  <%= render partial: 'actions', locals: { admin_user: @admin_user, role: @role }, as: :admin_user %>
+                </div>
+              </div>
+              <h2><%= _('Perfil') %> <span id="admin_user_state_badge"><%= render 'admin/shared/badges/state_badge', object: @admin_user, state: @admin_user.state %></span></h2>
+            </div>
+          </div>
+          <div>
+            <div class="ibox-content profile-content">
+
+              <h3><%= _('Datos del administrador') %></h3>
+              <dl class="dl-horizontal">
+                  <dt><%= _('Email') %></dt> <dd><%= @admin_user.email %></dd>
+                  <dt><%= _('Nombre completo') %></dt> <dd><%= @admin_user.full_name %></dd>
+              </dl>
+
+              <div class="hr-line-dashed"></div>
+              <dl class="dl-horizontal">
+                  <dt><%= _('Fecha creación') %></dt> <dd><%= @admin_user.created_at %></dd>
+                  <dt><%= _('Fecha modificación') %></dt> <dd><%= @admin_user.updated_at %></dd>
+              </dl>
+
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+    </div>
+
+    <div class="row">
+
+      <div class="col-sm-12">
+
+        <div class="ibox float-e-margins">
+          <div class="ibox-title">
+            <div class="m-b-md">
+              <div class="pull-right">
+                <div id="admin_user_actions">
+                  <% if policy(@admin_user).add_role_admin? %>
+                    <%= link_to _('Añadir rol'), new_admin_admin_user_admin_role_path(@admin_user), class: 'btn btn-xs btn-white' %>
+                  <% end %>
+                </div>
+              </div>
+              <h2><%= _('Roles') %></h2>
+            </div>
+          </div>
+          <div>
+            <div class="ibox-content profile-content">
+              <table class="table table-hover table-responsive">
+                <thead>
+                  <th><%= _('Rol') %></th>
+                </thead>
+                <tbody id="roles-table">
+                  <%= render partial: 'admin/admin_roles/admin_role_row', collection: policy_scope(@admin_user.roles), as: 'role', locals: {admin_user: @admin_user} %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,82 @@
+<% content_for :title do %>
+  <span><%= _('Administradores') %></span>
+<% end %>
+
+<div class="row animated fadeInRight">
+  <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+          <div class="ibox-title">
+              <h5>
+                <%= _('Administradors') %>
+              </h5>
+              <div class="ibox-tools">
+                <% if policy(AdminUser).create_admin? %>
+                  <%= link_to _('Nuevo administrador'), new_admin_admin_user_path(role: :admin), class: 'btn btn-primary btn-xs' %>
+                <% end %>
+              </div>
+          </div>
+          <div class="ibox-content">
+            <%= form_tag admin_admin_users_path, method: :get do |f| %>
+              <div class="row">
+                <% if policy(AdminUser).filter_by_state? %>
+                  <div class="col-md-4 form-group">
+                    <%= label_tag :state, _('Estado') %>
+                    <%= collection_select(nil, :state, AdminUser.aasm.states, :name, Proc.new {|state| AdminUser.state_string(state.name)}, {include_blank: _('Cualquiera'), selected: @state}, {class: 'input-sm form-control'}) %>
+                  </div>
+                <% end %>
+                <div class="col-md-4 form-group">
+                  <%= label_tag :email, _('Nombre o email') %>
+                  <%= text_field_tag :text, @text, {class: 'input-sm form-control search-text', placeholder: _('Nombre o email del administrador...'), value: @text} %>
+                </div>
+                <% if policy(AdminUser).filter_by_role? %>
+                  <div class="col-md-4 form-group">
+                    <%= label_tag :role, _('Rol') %>
+                    <%= collection_select(nil, :role, AdminRole.roles.keys, :to_s, Proc.new {|admin_role| AdminRole.name_for(admin_role)}, {include_blank: _('Cualquiera'), selected: @role}, {class: 'input-sm form-control'}) %>
+                  </div>
+                <% end %>
+              </div>
+              <div class="row">
+                <div class="col-md-12 form-group">
+                  <%= submit_tag _('Filtrar'), class: 'btn btn-sm btn-default search-button pull-right' %>
+                </div>
+              </div>
+            <% end %>
+
+            <div class="hr-line-dashed"></div>
+            
+            <% if @admin_users.any? %>
+              <div class="table-responsive">
+
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                      <th><%= sortable 'id', _('Id') %></th>
+                      <th><%= sortable 'email', _('Email') %></th>
+                      <th><%= sortable 'full_name', _('Nombre completo') %></th>
+                      <% if policy(AdminUser).filter_by_role? %>
+                        <th><%= _('Roles') %></th>
+                      <% end %>
+                      <th><%= sortable 'state', _('Estado') %></th>
+                      <th><%= sortable 'created_at', _('F. creación') %></th>
+                    </tr>
+                    </thead>
+                    <tbody id="users">
+                      <%= render partial: 'admin_user_row', collection: @admin_users, as: 'admin_user' %>
+                    </tbody>
+                </table>
+
+              </div>
+            <% else %>
+              <p class="empty-p"><%= _('No hay administradores') %></p>
+            <% end %>
+          </div>
+      </div>
+      <div id="page_entries_info">
+        <%= page_entries_info @admin_users, entry_name: 'administradores' %>
+      </div>
+      <div id="paginator">
+        <%= paginate @admin_users %>
+      </div>
+    
+  </div>
+</div>

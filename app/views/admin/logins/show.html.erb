@@ -1,0 +1,88 @@
+<% content_for :title do %>
+  <span><%= _('Detalles del login ') + @login.id.to_s %></span>
+<% end %>
+
+<div class="row animated fadeInRight">
+  <div class="col-sm-8">
+    <div class="ibox float-e-margins">
+      <div class="ibox-title">
+        <div class="m-b-md">
+          <h2><%= _('Login') + ' ' + @login.id.to_s %> <span id="login_state_badge"><%= render 'admin/shared/badges/state_badge', object: @login, state: @login.state %></span>
+          </h2>
+          <% if @login.denied_reason %>
+            <p>
+              <i class="fa fa-circle text-warning"></i>
+              <%= _('Motivo de la denegación:') + ' ' + @login.denied_reason %>
+            </p>
+          <% end %>
+        </div>
+      </div>
+      <div>
+        <div class="ibox-content">
+          <h3><%= _('Datos del login') %></h3>
+          <dl class="dl-horizontal">
+              <dt><%= _('Id') %></dt> <dd><%= @login.id.to_s %></dd>
+              <%= render 'admin/shared/location/location_dt', locals: {latitude: @login.latitude, longitude: @login.longitude} %>
+          </dl>
+
+          <div class="hr-line-dashed"></div>
+          <h3><%= _('Datos del usuario') %></h3>
+          <dl class="dl-horizontal">
+              <dt><%= _('Usuario') %></dt> <dd><%= !@login.user.nil? ? link_to(@login.user.email, admin_user_path(@login.user)) : '-' %></dd>
+          </dl>
+
+          <div class="hr-line-dashed"></div>
+          <h3><%= _('Locale') %></h3>
+          <dl class="dl-horizontal">
+              <dt><%= _('Idioma') %></dt> <dd><%= @login.locale_language %></dd>
+              <dt><%= _('País') %></dt> <dd><%= @login.locale_country  %></dd>
+          </dl>
+
+          <div class="hr-line-dashed"></div>
+          <h3><%= _('Red') %></h3>
+          <dl class="dl-horizontal">
+              <dt><%= _('IP') %></dt> <dd><%= @login.ip || '-' %></dd>
+              <dt><%= _('Red') %></dt> <dd><%= @login.network_type_string  %></dd>
+              <dt><%= _('SSID') %></dt> <dd><%= @login.ssid || '-'  %></dd>
+          </dl>
+
+          <% if @login.device %>
+
+            <div class="hr-line-dashed"></div>
+            <h3><%= _('Dispositivo') %></h3>
+            <dl class="dl-horizontal">
+                <dt><%= _('Id (BD)') %></dt> <dd><%= @login.device.id.to_s %></dd>
+                <dt><%= _('Identificador') %></dt> <dd><%= @login.device.unique_identifier %></dd>
+                <dt><%= _('Marca') %></dt> <dd><%= @login.device.device_model.device_manufacturer.name %></dd>
+                <dt><%= _('Modelo') %></dt> <dd><%= @login.device.device_model.name %></dd>
+                <dt><%= _('Usuario actual') %></dt> <dd><%= !@login.device.user.nil? ? link_to(@login.device.user.email, admin_user_path(@login.device.user)) : '-' %></dd>
+                <dt><%= _('Fecha creación') %></dt> <dd><%= @login.device.created_at %></dd>
+
+              <% if @login.mobile_operating_system_version %>
+
+                  <dt><%= _('Sistema operativo') %></dt> <dd><%= @login.mobile_operating_system_version.mobile_operating_system.name %></dd>
+                  <dt><%= _('Versión del SO') %></dt> <dd><%= @login.mobile_operating_system_version.name %></dd>
+
+              <% end %>
+
+            </dl>
+
+          <% end %>
+
+          <div class="hr-line-dashed"></div>
+          <dl class="dl-horizontal">
+              <dt><%= _('Fecha creación') %></dt> <dd><%= @login.created_at %></dd>
+              <dt><%= _('Fecha modificación') %></dt> <dd><%= @login.updated_at %></dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="row animated fadeInRight">
+  <div class="col-sm-8">
+    <%= render partial: 'admin/api_requests/index', locals: { login: @login } %>
+  </div>
+</div>

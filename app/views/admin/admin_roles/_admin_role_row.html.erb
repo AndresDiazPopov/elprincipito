@@ -1,0 +1,12 @@
+<tr>
+  <td>
+    <%= linked_role_name_for(role).html_safe %>
+  </td>
+  <td>
+    <div class="text-right">
+      <% if policy(role).destroy? %>
+        <%= link_to _('Dar de baja'), admin_admin_user_admin_role_path(admin_user_id: admin_user.id, id: role.id, authorizable_id: role.authorizable_id), method: :delete, format: :js, class: 'btn btn-xs btn-danger', remote: true, data: {confirm: _('¿Dar de baja este rol de este administrador?')} %>
+      <% end %>
+    </div>
+  </td>
+</tr>

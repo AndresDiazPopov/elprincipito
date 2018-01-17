@@ -1,0 +1,152 @@
+#!/usr/bin/env ruby
+#
+# Generate a changelog entry file in the correct location.
+#
+# Automatically stages the file and amends the previous commit if the `--amend`
+# argument is used.
+
+require 'yaml'
+require 'fileutils'
+
+FileData = Struct.new(
+  :action,
+  :message,
+  :issue
+)
+
+class ChangelogParser
+
+  # Este es el método que lee todos los archivos de la carpeta
+  # "changelogs/unmerged/" (salvo el README.md), interpreta su contenido,
+  # y añade las entradas correspondientes al CHANGELOG.md
+  def self.merge_files(version)
+
+    self.fail_with "Usage: #{__FILE__} version\n\n" if version.nil? || version.class != String
+
+    outfile = "CHANGELOG.md"
+    file_content = File.open(outfile, 'r').read
+
+    self.fail_with "Ya existe una entrada con la versión " + version + " en el CHANGELOG.md\n\n" if !file_content.index("## [" + version + "]").nil?
+
+    puts
+    $stdout.puts 'Volcando los archivos de Changelog de la carpeta changelogs/unmerged/'
+    puts
+
+    changes = {
+      'Added': [],
+      'Changed': [],
+      'Fixed': [],
+      'Deprecated': []
+    }
+
+    # Para cada archivo (saltamos el README.md)
+    file_names = Dir.glob('changelogs/unmerged/*') - ["changelogs/unmerged/README.md"]
+
+    self.fail_with "No se encontraron archivos en changelogs/unmerged/\n\n" if file_names.count <= 0
+
+    puts file_names.count.to_s + ' archivos encontrados:'
+
+    file_names.each do |file_name|
+
+      puts file_name
+
+      # Creamos el String que se añadirá a la sección indicada
+      file_data = parse(file_name)
+      # Si no tiene código de issue (debería tenerlo!), se añade el mensaje sin él
+      if file_data.issue.nil?
+        string = '- ' + file_data.message
+      else
+        string = '- ' + file_data.issue + ': ' + file_data.message
+      end
+      changes[file_data.action.to_sym] << string
+
+    end
+
+    change_string = self.add_changes_to_version(changes, version)
+
+    puts
+    puts 'Se ha añadido al CHANGELOG.md la versión ' + version + ' con el siguiente contenido: '
+    puts 
+    puts '--------------'
+    puts change_string
+    puts '--------------'
+
+    puts
+    file_names.each do |file_name|
+      # self.move_file_to_merged(file_name.split('/').last)
+    end
+    puts 'Archivos movidos a la carpeta changelogs/merged/'
+    puts
+    puts 'Generación de Changelog terminada. Revisa el CHANGELOG.md para comprobar que todo ha ido bien ;)'
+  end
+
+  private
+
+    # Parsea un archivo en el formato requerido (YAML), y devuelve una
+    # estructura FileData
+    def self.parse(file)
+      yaml = YAML.load_file(file)
+
+      self.fail_with "El archivo " + file + " no especifica la action\n\n" if yaml["action"].nil?
+      self.fail_with "El archivo " + file + " no especifica el message\n\n" if yaml["message"].nil?
+      # self.fail_with "El archivo " + file + " no especifica la issue\n\n" if yaml["issue"].nil?
+
+      file_data = FileData.new
+      file_data.action = yaml["action"]
+      file_data.message = yaml["message"]
+      file_data.issue = yaml["issue"]
+
+      file_data
+    end
+
+    # Vuelca los cambios (hash changes) en el CHANGELOG.md. Devuelve el string añadido
+    def self.add_changes_to_version(changes, version)
+      # Va añadiendo a un String las distintas lineas
+      changes_string = ""
+
+      # Para cada grupo de cambios (Added, Changed, Fixed)
+      changes.keys.each do |key|
+
+        if changes[key].any?
+          # Se monta el título
+          changes_string += '### ' + key.to_s + "\n"
+          
+          # Se añaden las lineas de los cambios individuales
+          changes[key].each do |change|
+            changes_string += change + "\n"
+          end
+          changes_string += "\n"
+        end
+      end
+
+      # Eliminar los últimos 2 \n
+      changes_string = changes_string[0..changes_string.length - 3]
+
+      changes_string = "## [" + version + "] (" + Date.today.to_s + ")\n\n" + changes_string
+
+      infile = "CHANGELOG.md"
+      outfile = "CHANGELOG.md"
+
+      # Se busca la entrada "Unreleased" y se le añade el string con toda la info
+      File.open(outfile, 'r+') do |out|
+        out << File.open(infile).read.gsub('## [Unreleased]', "## [Unreleased]\n\n" + changes_string)
+      end
+
+      changes_string
+    end
+
+    # Mueve el archivo indicado de la carpeta "changelogs/unmerged/" a
+    # changelogs/merged/
+    def self.move_file_to_merged(file_name)
+      FileUtils.mv('changelogs/unmerged/' + file_name.split('/').last, 'changelogs/merged/' + file_name.split('/').last)
+    end
+
+    def self.fail_with(message)
+      $stderr.puts "\e[31merror\e[0m #{message}"
+      exit 1
+    end
+end
+
+if $0 == __FILE__
+  ChangelogParser.merge_files(ARGV[0])
+end

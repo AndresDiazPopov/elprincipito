@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%= display_meta_tags :site => ENV['APP_NAME'], 
+    :author => '',
+    :publisher => '',
+    :og => {
+      :site_name => ENV['APP_NAME'], 
+      :type => 'product', 
+      :title => :title, 
+      :description => :description,
+      :image => image_url('Logo.png')} %>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <%= favicon_link_tag 'favicon.ico' %>
+  <!-- Main css styles -->
+  <%= stylesheet_link_tag    'admin/application', media: 'all', 'data-turbolinks-track' => true %>
+
+  <!-- Main javascript files -->
+  <%= javascript_include_tag 'admin/application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+  <%= analytics_init :local => Rails.env.develpoment? %>
+
+  <%= yield :head %>
+  
+</head>
+<body>
+
+    <div id="wrapper">
+
+        <%= render 'layouts/admin/navigation' %>
+
+        <div id="page-wrapper" class="gray-bg">
+
+            <%= render 'layouts/admin/topnavbar' %>
+
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-12">
+                    <h2><%= yield :title %></h2>
+
+                    <ol class="breadcrumb">
+                      <%= render_breadcrumbs :tag => :li, :separator => "" %>
+                    </ol>
+                </div>
+                <div class="col-lg-2">
+
+                </div>
+            </div>
+
+            <div class="wrapper wrapper-content animated fadeInRight">
+
+            <%= render partial: "admin/shared/flash_messages/flash_messages", flash: flash %>
+
+            <%= yield %>
+
+            </div>
+            
+            <%= render 'layouts/admin/footer' %>
+
+        </div>
+    
+            <div id="blueimp-gallery" class="blueimp-gallery">
+                <div class="slides"></div>
+                <h3 class="title"></h3>
+                <a class="prev">‹</a>
+                <a class="next">›</a>
+                <a class="close">×</a>
+                <a class="play-pause"></a>
+                <ol class="indicator"></ol>
+            </div>
+
+    </div>
+
+</body>
+</html>

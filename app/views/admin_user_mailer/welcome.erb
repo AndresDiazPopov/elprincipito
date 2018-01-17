@@ -1,0 +1,20 @@
+<p>
+  <%= _('Hola') %>, <%= @admin_user.email %>
+</p>
+
+<p>
+  <%= _('Has sido dado de alta en') + ' ' + @app_name + ' ' + _('con los siguientes datos de acceso') %>:
+</p>
+
+<dl class="dl-horizontal">
+  <dt><%= _('Email') %></dt> <dd><%= @admin_user.email %></dd>
+  <dt><%= _('Contraseña') %></dt> <dd><%= @password %></dd>
+</dl>
+
+<p>
+  <%= _('Pulsa el siguiente enlace para entrar al panel. Te recomendamos que cambies la contraseña por una segura.') %>
+</p>
+
+<p>
+  <%= link_to _('Entrar al panel'), root_url %>
+</p>

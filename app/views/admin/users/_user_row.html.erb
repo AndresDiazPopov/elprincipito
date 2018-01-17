@@ -1,0 +1,7 @@
+<tr data-link="<%= admin_user_path(user) %>">
+  <td><%= user.id.to_s %></td>
+  <td><%= image_tag user.image.url(:thumb), class: 'img-circle' %></td>
+  <td><%= user.email || '-' %></td>
+  <td><%= render 'admin/shared/badges/state_badge', object: user, state: user.state %></td>
+  <td><%= user.created_at %></td>
+</tr>

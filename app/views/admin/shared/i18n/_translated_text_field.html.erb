@@ -1,0 +1,41 @@
+<% max_length = max_length %>
+<% placeholder = placeholder %>
+<% data = {} %>
+<% css_class = css_class || '' %>
+<% type = type || :text %>
+
+<% I18n.available_locales.each_with_index do |locale, index| %>
+  <%= form_helper.globalize_fields_for locale do |ff| %>
+
+    <div class="<%= field_name.to_s %>">
+      
+      <div class="form-group col-sm-<%= col %> <%= 'has-error' if model.errors.messages[field_name] %> field-value  <%= locale %>">
+        <%= ff.label field_name, field_label + ' (' + locale + ')' %>
+        <div class="<%= 'input-group' if fa_icon %>">
+          <% if fa_icon %>
+            <span class="input-group-addon"><i class="fa <%= fa_icon %>"></i></span>
+          <% end %>
+          <% if type == :password %>
+            <%= ff.password_field field_name, class: 'form-control ' + css_class, maxlength: max_length, placeholder: placeholder, data: data %>
+          <% elsif type == :email %>
+            <%= ff.email_field field_name, class: 'form-control ' + css_class, maxlength: max_length, placeholder: placeholder, data: data %>
+          <% else %>
+            <%= ff.text_field field_name, class: 'form-control ' + css_class, maxlength: max_length, placeholder: placeholder, data: data %>
+          <% end %>
+        </div>
+
+        <% I18n.available_locales.each_with_index do |locale, index| %>
+          <small>
+            <%= link_to locale, '#', class: ' locale-link ' + locale + ' ' + field_name.to_s, data: { locale: locale, field_id: field_name.to_s } %>
+          </small>
+        <% end %>
+
+        <% if !model.errors.messages[field_name].nil? && model.errors.messages[field_name].any? %>
+          <span class="text-danger"><small><%= field_label + ' ' + model.errors.messages[field_name][0] %></small></span>
+        <% end %>
+      </div>
+
+    </div>
+
+  <% end %>
+<% end %>

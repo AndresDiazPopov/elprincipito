@@ -1,0 +1,18 @@
+<% model = locals[:model] %>
+<% f = locals[:form_helper] %>
+<% field_name = locals[:field_name] %>
+<% field_label = locals[:field_label] %>
+<% col = locals[:col] %>
+<% method = locals[:method] %>
+<% collection = locals[:collection] %>
+<% value_method = locals[:value_method] %>
+<% text_method = locals[:text_method] %>
+<% options = locals[:options] || {} %>
+<% disabled = locals[:disabled] %>
+
+<div class="form-group col-sm-<%= col %> <%= 'has-error' if model.errors.messages[field_name] %>">
+  <%= f.label field_name, field_label %>
+  <% html_options = {class: 'form-control'} %>
+  <% html_options[:disabled] = 'disabled' if disabled %>
+  <%= f.collection_select(method, collection, value_method, text_method, options, html_options) %>
+</div>

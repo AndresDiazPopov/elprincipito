@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%= display_meta_tags :site => ENV['APP_NAME'], 
+    :author => '',
+    :publisher => '',
+    :og => {
+      :site_name => ENV['APP_NAME'], 
+      :type => 'product', 
+      :title => :title, 
+      :description => :description,
+      :image => image_url('Logo.png')} %>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <%= favicon_link_tag 'favicon.ico' %>
+  <!-- Main css styles -->
+  <%= stylesheet_link_tag    'admin/devise', media: 'all', 'data-turbolinks-track' => true %>
+
+  <!-- Main javascript files -->
+  <%= javascript_include_tag 'admin/devise', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+  <%= analytics_init :local => Rails.env.develpoment? %>
+
+  <%= yield :head %>
+  
+</head>
+<body class="gray-bg">
+
+    <div class="middle-box text-center loginscreen animated fadeInDown">
+        <%= yield %>
+    </div>
+
+</body>
+</html>

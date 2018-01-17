@@ -1,0 +1,105 @@
+/*
+ *
+ *   INSPINIA - Responsive Admin Theme
+ *   version 2.7
+ *
+*/
+
+// Google Fonts
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&lang=en");
+
+// Bootstra
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+// Variables, Mixins
+@import "inspinia/variables";
+@import "inspinia/mixins";
+
+// INSPINIA Theme Elements
+@import "inspinia/typography";
+@import "inspinia/navigation";
+@import "inspinia/top_navigation";
+@import "inspinia/buttons";
+@import "inspinia/badges_labels";
+@import "inspinia/elements";
+@import "inspinia/sidebar";
+@import "inspinia/base";
+@import "inspinia/pages";
+@import "inspinia/chat";
+@import "inspinia/metismenu";
+@import "inspinia/spinners";
+
+// Landing page
+@import "inspinia/landing";
+
+// RTL Support
+@import "inspinia/rtl";
+
+// For demo only - config box style
+@import "inspinia/theme-config";
+
+// INSPINIA Skins
+@import "inspinia/skins";
+@import "inspinia/md-skin";
+
+// Media query style
+@import "inspinia/media";
+
+// Custom style
+// Your custom style to override base style
+@import "inspinia/custom";
+
+// Clear layout on print mode
+@media print {
+  nav.navbar-static-side {
+    display: none;
+  }
+
+  body { overflow: visible !important; }
+
+  #page-wrapper {
+    margin: 0;
+  }
+}
+
+
+.menu-profile-image {
+  width: 48px;
+  border: 1px solid $gray;
+}
+.table .img-circle {
+  width: 25px;
+  height: 25px;
+}
+.table tbody tr {
+  cursor: pointer;
+}
+.dropzone .dz-preview.dz-success .dz-success-mark {
+  display: none !important;
+}
+.font-normal {
+  font-weight: normal;
+}
+
+.google-map {
+  height: 400px;
+}
+.google-map-mini {
+  height: 200px;
+}
+
+a.locale-link {
+  font-weight: normal;
+}
+a.locale-link.active {
+  font-weight: bold;
+}
+
+.property-input {
+  min-height: 34px;
+}
+
+.checkbox-input-group {
+  padding: 10px 0;
+}

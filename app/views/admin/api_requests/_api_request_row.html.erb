@@ -1,0 +1,9 @@
+<tr data-link="<%= admin_api_request_path(api_request) %>">
+  <td><%= api_request.id.to_s %></td>
+  <td><%= api_request.login.try(:id).try(:to_s) || '-' %></td>
+  <td><%= api_request.user.try(:email) || '-' %></td>
+  <td><%= api_request.path %></td>
+  <td><%= api_request.ip %></td>
+  <td><%= api_request.network_type_string %></td>
+  <td><%= api_request.created_at %></td>
+</tr>

@@ -1,0 +1,19 @@
+<p>
+  <%= _('Hola') %>, <%= @admin_user.email %>
+</p>
+
+<p>
+  <% if @authorizable_name %>
+    <%= _('Has sido dado de alta en') + ' ' + @app_name + ' ' + _('como') + ' ' + @role_name + ' ' + _('en') + ' ' + @authorizable_name %>.
+  <% else %>
+    <%= _('Has sido dado de alta en') + ' ' + @app_name + ' ' + _('como') + ' ' + @role_name %>.
+  <% end %>
+</p>
+
+<p>
+  <%= _('Puedes iniciar sesión en el panel con los mismos datos de acceso que habías utilizado hasta ahora.') %>
+</p>
+
+<p>
+  <%= link_to _('Entrar al panel'), root_url %>
+</p>

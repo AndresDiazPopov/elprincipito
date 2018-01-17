@@ -1,0 +1,21 @@
+default: &default
+  adapter: <%= ENV["database_adapter"] %>
+  encoding: <%= ENV["database_encoding"] %>
+  pool: <%= ENV["database_pool"].to_i %>
+  host: <%= ENV["database_host"] %>
+  port: <%= ENV["database_port"].to_i %>
+  database: <%= ENV["database_database"] %>
+  username: <%= ENV["database_username"] %>
+  password: <%= ENV["database_password"] %>
+
+development:
+  <<: *default
+  socket: /tmp/mysql.sock
+
+test:
+  <<: *default
+  adapter: sqlite3
+  database: db/test.sqlite3
+
+production:
+  <<: *default

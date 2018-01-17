@@ -1,0 +1,18 @@
+<% model = locals[:model] %>
+<% f = locals[:form_helper] %>
+<% fa_icon = locals[:fa_icon] %>
+<% field_name = locals[:field_name] %>
+<% field_label = locals[:field_label] %>
+<% col = locals[:col] %>
+<% max_length = locals[:max_length] %>
+<% placeholder = locals[:placeholder] %>
+<% data = {mask: locals[:mask]} if locals[:mask] %>
+<% css_class = locals[:css_class] || '' %>
+
+<div class="form-group col-sm-<%= col %> <%= 'has-error' if model.errors.messages[field_name] %>">
+    <%= f.label field_name, field_label %>
+    <div class="input-group date">
+        <span class="input-group-addon"><i class="fa <%= fa_icon %>"></i></span>
+        <%= f.text_area field_name, class: 'form-control ' + css_class %>
+    </div>
+</div>

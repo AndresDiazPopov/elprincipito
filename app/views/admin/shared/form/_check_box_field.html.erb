@@ -1,0 +1,17 @@
+<div class="form-group col-sm-<%= col %> <%= 'has-error' if model.errors.messages[field_name] %>">
+    
+    <label></label>
+  
+    <div class="input-group checkbox-input-group">
+      
+      <div class="checkbox-inline i-checks">
+        
+        <%= form_helper.check_box field_name %>
+
+        <%= form_helper.label field_name, field_label %>
+
+      </div>
+
+    </div>
+
+</div>

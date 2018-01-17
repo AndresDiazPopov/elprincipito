@@ -1,0 +1,1 @@
+$('#roles-table').html("<%= escape_javascript render partial: 'admin/admin_roles/admin_role_row', collection: policy_scope(@admin_user.roles), as: 'role', locals: {admin_user: @admin_user} %>");

@@ -1,0 +1,15 @@
+<% model = locals[:model] %>
+<% field_name = locals[:field_name] %>
+<% field_label = locals[:field_label] %>
+<% select_name = locals[:select_name] %>
+<% col = locals[:col] %>
+<% method = locals[:method] %>
+<% collection = locals[:collection] %>
+<% value_method = locals[:value_method] %>
+<% text_method = locals[:text_method] %>
+<% options = locals[:options] || {} %>
+
+<div class="form-group col-sm-<%= col %> <%= 'has-error' if model.errors.messages[field_name] %>">
+  <%= label field_name, field_label %>
+  <%= collection_select(field_name, method, collection, value_method, text_method, options, {class: 'form-control', name: select_name}) %>
+</div>

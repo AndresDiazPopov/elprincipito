@@ -1,0 +1,11 @@
+<p>
+  <%= _('Hola') %>, <%= @admin_user.email %>
+</p>
+
+<p>
+  <% if @authorizable_name %>
+    <%= _('Has sido dado de baja en') + ' ' + @app_name + ' ' + _('como') + ' ' + @role_name + ' ' + _('en') + ' ' + @authorizable_name %>.
+  <% else %>
+    <%= _('Has sido dado de baja en') + ' ' + @app_name + ' ' + _('como') + ' ' + @role_name %>.
+  <% end %>
+</p>

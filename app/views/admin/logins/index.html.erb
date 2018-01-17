@@ -1,0 +1,72 @@
+<% content_for :title do %>
+  <span><%= _('Logins') %></span>
+<% end %>
+
+<div class="row animated fadeInRight">
+  <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+          <div class="ibox-title">
+              <h5>
+                <%= _('Logins') %>
+              </h5>
+          </div>
+          <div class="ibox-content">
+            <%= form_tag admin_logins_path, method: :get do |f| %>
+              <div class="row">
+                <div class="col-md-4 form-group">
+                  <%= label_tag :state, _('Estado') %>
+                  <%= collection_select(nil, :state, Login.aasm.states, :name, Proc.new {|state| Login.state_string(state.name)}, {include_blank: _('Cualquiera'), selected: params[:state]}, {class: 'input-sm form-control'}) %>
+                </div>
+                <div class="col-md-4 form-group">
+                  <%= label_tag :user_id, _('Marca del dispositivo') %>
+                  <%= collection_select(nil, :device_manufacturer_id, DeviceManufacturer.all.order(name: :asc), :id, :name, {include_blank: _('Cualquiera'), selected: @device_manufacturer_id}, {class: 'input-sm form-control'}) %>
+                </div>
+                <div class="col-md-4 form-group">
+                  <%= label_tag :user_id, _('Usuario') %>
+                  <%= collection_select(nil, :user_id, User.all.order(email: :asc), :id, :email, {include_blank: _('Cualquiera'), selected: @user_id}, {class: 'input-sm form-control'}) %>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 form-group">
+                  <%= submit_tag _('Filtrar'), class: 'btn btn-sm btn-default search-button pull-right' %>
+                </div>
+              </div>
+            <% end %>
+
+            <div class="hr-line-dashed"></div>
+            
+            <% if @logins.any? %>
+              <div class="table-responsive">
+                
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                      <th><%= sortable 'id', _('Id') %></th>
+                      <th><%= sortable 'users.email', _('Usuario') %></th>
+                      <th><%= sortable 'device_manufacturers.name', _('Marca del dispositivo') %></th>
+                      <th><%= sortable 'ip', _('IP') %></th>
+                      <th><%= sortable 'network_type', _('Red') %></th>
+                      <th><%= sortable 'state', _('Estado') %></th>
+                      <th><%= sortable 'created_at', _('F. creación') %></th>
+                    </tr>
+                    </thead>
+                    <tbody id="logins">
+                      <%= render partial: 'login_row', collection: @logins, as: 'login' %>
+                    </tbody>
+                </table>
+
+              </div>
+            <% else %>
+              <p class="empty-p"><%= _('No hay logins') %></p>
+            <% end %>
+          </div>
+      </div>
+      <div id="page_entries_info">
+        <%= page_entries_info @logins, entry_name: 'logins' %>
+      </div>
+      <div id="paginator">
+        <%= paginate @logins %>
+      </div>
+    
+  </div>
+</div>

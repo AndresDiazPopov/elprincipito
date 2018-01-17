@@ -1,0 +1,12 @@
+<% if @admin_user %>
+  $('#user-data-p').html("<%= (_('Ya existe un administrador con el email') + ' <strong>' + params[:email] + '</strong> ' + _('en nuestra base de datos.')).html_safe %>");
+  $('#new-user-form').attr('action', '<%= add_role_admin_admin_user_path(@admin_user) %>');
+  var input = $("<input id='form-method'>")
+    .attr("type", "hidden")
+    .attr("name", "_method").val("put");
+  $('#new-user-form').append($(input));
+<% else %>
+  $('#user-data-p').html("<%= (_('No existe un administrador con el email') + ' <strong>' + params[:email] + '</strong> ' + _('en nuestra base de datos. Completa los datos del nuevo administrador. Recibirá un email con los datos de acceso al panel.')).html_safe %>");
+  $('#new-user-form').attr('action', '<%= admin_admin_users_path %>');
+  $('#form-method').remove();
+<% end %>

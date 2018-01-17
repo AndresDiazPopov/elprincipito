@@ -1,0 +1,8 @@
+<div class="footer">
+    <div class="pull-right">
+        <%= _('Desarrollado por Softwhisper') %>
+    </div>
+    <div>
+        <%= Figaro.env.app_name %> &copy; <%= Time.now.year.to_s %> · <%= Rails.application.config.app_version %> (<%= Rails.application.config.app_commit %>)
+    </div>
+</div>

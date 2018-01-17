@@ -1,0 +1,69 @@
+<% content_for :title do %>
+  <span><%= _('Usuarios') %></span>
+<% end %>
+
+<div class="row animated fadeInRight">
+  <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+          <div class="ibox-title">
+              <h5>
+                <%= _('Usuarios') %>
+                <% if @text %>
+                  <small><%= _('Mostrando coincidencias con') + ' "' + @text + '"' %></small>
+                <% end %>
+              </h5>
+          </div>
+          <div class="ibox-content">
+            <%= form_tag admin_users_path, method: :get do |f| %>
+              <div class="row">
+                <div class="col-md-4 form-group">
+                  <%= label_tag :email, _('Email') %>
+                  <%= text_field_tag :text, @text, {class: 'input-sm form-control search-text', placeholder: _('Email del usuario...'), value: @text} %>
+                </div>
+                <div class="col-md-4 form-group">
+                  <%= label_tag :state, _('Estado') %>
+                  <%= collection_select(nil, :state, User.aasm.states, :name, Proc.new {|state| User.state_string(state.name)}, {include_blank: _('Cualquiera'), selected: @state}, {class: 'input-sm form-control'}) %>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 form-group">
+                  <%= submit_tag _('Filtrar'), class: 'btn btn-sm btn-default search-button pull-right' %>
+                </div>
+              </div>
+            <% end %>
+
+            <div class="hr-line-dashed"></div>
+            
+            <% if @users.any? %>
+              <div class="table-responsive">
+                
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                      <th><%= sortable 'id', _('Id') %></th>
+                      <th><%= _('Imagen') %></th>
+                      <th><%= sortable 'email', _('Email') %></th>
+                      <th><%= sortable 'state', _('Estado') %></th>
+                      <th><%= sortable 'created_at', _('F. creación') %></th>
+                    </tr>
+                    </thead>
+                    <tbody id="users">
+                      <%= render partial: 'user_row', collection: @users, as: 'user' %>
+                    </tbody>
+                </table>
+
+              </div>
+            <% else %>
+              <p class="empty-p"><%= _('No hay usuarios') %></p>
+            <% end %>
+          </div>
+      </div>
+      <div id="page_entries_info">
+        <%= page_entries_info @users, entry_name: 'usuarios' %>
+      </div>
+      <div id="paginator">
+        <%= paginate @users %>
+      </div>
+    
+  </div>
+</div>
