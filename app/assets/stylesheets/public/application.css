@@ -14,5 +14,14 @@
  *= require font-awesome
  *= require jquery.ui.all
  *= require public/style
- *= require public/themes/freelancer/freelancer.min
+ *= require public/themes/vortex/animate.css
+ *= require public/themes/vortex/ionicons.min
+ *= require public/themes/vortex/linea-icons.css
+ *= require public/themes/vortex/magnific-popup.css
+ *= require public/themes/vortex/owl.carousel.css
+ *= require public/themes/vortex/owl.transitions.css
+ *= require public/themes/vortex/simpletextrotator.css
+ *= require public/themes/vortex/style.css
+ *= require public/themes/vortex/superslides.css
+ *= require public/themes/vortex/vertical.css
  */
