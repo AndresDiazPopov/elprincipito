@@ -1,0 +1,95 @@
+<!-- PRELOADER -->
+<div id="page-loader" class="page-loader">
+  <div class="loader">Loading...</div>
+</div>
+<!-- /PRELOADER -->
+
+<div id="overlay-menu" class="overlay-menu">
+
+  <a href="#" id="overlay-menu-hide" class="navigation-hide"><i class="fa fa-times"></i></a>
+
+  <div class="overlay-menu-inner">
+    <nav class="overlay-menu-nav">
+
+      <ul id="nav">
+        <li class="slidedown">
+          <a href="#" class="active"><%= t('home.top_navbar.overlay_menu.chapters') %></a>
+          <ul>
+            <li>
+              <%#= link_to phrase(_('Menu-Nav-Diseños').upcase), catalog_path %>
+            </li>
+            <li>
+              <%#= link_to phrase(_('Menu-Nav-Características').upcase), characteristics_path %>
+            </li>
+            <li>
+              <%#= link_to phrase(_('Menu-Nav-Catálogo').upcase), Catalogs::FindByLocale.call(locale: I18n.locale), target: '_blank' %>
+            </li>
+          </ul>
+        </li>
+
+        <li class="slidedown">
+          <a href="#" class="active"><%= t('home.top_navbar.overlay_menu.social') %></a>
+          <ul>
+            <li>
+              <%#= link_to phrase(_('Menu-Nav-Diseños').upcase), catalog_path %>
+            </li>
+            <li>
+              <%#= link_to phrase(_('Menu-Nav-Características').upcase), characteristics_path %>
+            </li>
+            <li>
+              <%#= link_to phrase(_('Menu-Nav-Catálogo').upcase), Catalogs::FindByLocale.call(locale: I18n.locale), target: '_blank' %>
+            </li>
+          </ul>
+        </li>
+
+        <li class="slidedown">
+          <a href="#" class="active"><%= t('home.top_navbar.overlay_menu.language') %></a>
+          <ul>
+            <li>
+              <% Languages::Search.call(state: 'enabled').each do |language| %>
+                <li>
+                  <% if 'es' == I18n.locale.to_s %>
+                      <% if language.name == 'Español' %>
+                          <%= link_to url_for(params.merge({locale: language.translation.locale.to_s})) do %>
+                              <strong><%= language.name %></strong>
+                          <% end %>
+                      <% else %>
+                          <%= link_to language.name, url_for(params.merge({locale: 'en'})) %>
+                      <% end %>
+                  <% else %>
+                      <% if language.name == 'English' %>
+                          <%= link_to url_for(params.merge({locale: language.translation.locale.to_s})) do %>
+                              <strong><%= language.name %></strong>
+                          <% end %>
+                      <% else %>
+                          <%= link_to language.name, url_for(params.merge({locale: 'es'})) %>
+                      <% end %>
+                  <% end %>
+                </li>
+            <% end %>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+
+    </nav>
+  </div>
+
+  <div class="overlay-navigation-footer">
+
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-sm-12 text-center">
+          <p class="copyright font-alt m-b-0">© <%= t('home.footer.year')%> <%= t('home.footer.app_name') %></p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

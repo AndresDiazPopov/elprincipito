@@ -2,7 +2,11 @@ en:
   home:
     footer:
       instagram: 'Instagram'
-      twitter: 'Twitter'
       facebook: 'Facebook'
       app_name: 'The Little Prince'
       year: '2018'
+    top_navbar:
+      overlay_menu:
+        language: 'Language'
+        chapters: 'Chapters'
+        social: 'Social'
