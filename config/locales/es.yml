@@ -3,10 +3,14 @@ es:
   home:
       footer:
         instagram: 'Instagram'
-        twitter: 'Twitter'
         facebook: 'Facebook'
         app_name: 'El Principito'
         year: '2018'
+      top_navbar:
+        overlay_menu:
+          language: 'Idiomas'
+          chapters: 'Capítulos'
+          social: 'Social'
 
   date:
     abbr_day_names:

@@ -1,0 +1,64 @@
+<nav class="navbar navbar-custom navbar-fixed-top navbar-transparent navbar-light">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- YOU LOGO HERE -->
+      <%= link_to root_path, class: "navbar-brand" do %>
+          <%= image_tag 'logo-dark.png', style: 'width:95px;' %>
+      <% end %>
+
+    </div>
+
+
+    <ul id="icons-navbar" class="nav navbar-nav navbar-right">
+      <li>
+        <a href="#" id="toggle-menu" class="show-overlay" title="Menu">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+      </li>
+    </ul>
+
+
+    <ul class="extra-navbar nav navbar-nav navbar-right">
+
+
+      <li>
+        <%= link_to 'Facebook', root_path %>
+      </li>
+      <li>
+        <%= link_to 'Instagram', root_path %>
+      </li>
+      <li class="pull-right dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= I18n.locale.upcase %> <span class="caret"></span></a>
+        <ul class="dropdown-menu collection-dropdown-menu">
+          <% Languages::Search.call(state: 'enabled').each do |language| %>
+              <li>
+                <% if 'es' == I18n.locale.to_s %>
+                    <% if language.name == 'Español' %>
+                        <%= link_to url_for(params.merge({locale: language.translation.locale.to_s})) do %>
+                            <strong><%= language.name %></strong>
+                        <% end %>
+                    <% else %>
+                        <%= link_to language.name, url_for(params.merge({locale: 'en'})) %>
+                    <% end %>
+                <% else %>
+                    <% if language.name == 'English' %>
+                        <%= link_to url_for(params.merge({locale: language.translation.locale.to_s})) do %>
+                            <strong><%= language.name %></strong>
+                        <% end %>
+                    <% else %>
+                        <%= link_to language.name, url_for(params.merge({locale: 'es'})) %>
+                    <% end %>
+                <% end %>
+              </li>
+          <% end %>
+        </ul>
+      </li>
+    </ul>
+
+  </div>
+
+</nav>

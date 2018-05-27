@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170724083020) do
+ActiveRecord::Schema.define(version: 20180326115130) do
 
   create_table "admin_roles", force: :cascade do |t|
     t.string   "name",              limit: 255,                 null: false
@@ -136,6 +136,23 @@ ActiveRecord::Schema.define(version: 20170724083020) do
   end
 
   add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
+
+  create_table "language_translations", force: :cascade do |t|
+    t.integer  "language_id", limit: 4,   null: false
+    t.string   "locale",      limit: 255, null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.string   "name",        limit: 255
+  end
+
+  add_index "language_translations", ["language_id"], name: "index_language_translations_on_language_id", using: :btree
+  add_index "language_translations", ["locale"], name: "index_language_translations_on_locale", using: :btree
+
+  create_table "languages", force: :cascade do |t|
+    t.integer  "state",      limit: 4, default: 0, null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+  end
 
   create_table "logins", force: :cascade do |t|
     t.string   "code",                               limit: 255,                null: false
