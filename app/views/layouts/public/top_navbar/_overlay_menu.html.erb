@@ -14,16 +14,37 @@
       <ul id="nav">
         <li class="slidedown">
           <a href="#" class="active"><%= t('home.top_navbar.overlay_menu.chapters') %></a>
-          <ul>
-            <li>
-              <%#= link_to phrase(_('Menu-Nav-Diseños').upcase), catalog_path %>
-            </li>
-            <li>
-              <%#= link_to phrase(_('Menu-Nav-Características').upcase), characteristics_path %>
-            </li>
-            <li>
-              <%#= link_to phrase(_('Menu-Nav-Catálogo').upcase), Catalogs::FindByLocale.call(locale: I18n.locale), target: '_blank' %>
-            </li>
+        </li>
+        <li class="slidedown">
+          <a href="#" class="active"><%= t('home.top_navbar.overlay_menu.chapters_1_10') %></a>
+          <ul class="slidedown">
+              <% (1..10).each do |index| %>
+                <li>
+                  <a href="#capitulo<%= index.to_s %>"><%= t('home.body.book.chapter_' + index.to_s + '.title') %></a>
+                </li>
+              <% end %>
+          </ul>
+        </li>
+
+        <li class="slidedown">
+          <a href="#" class="active"><%= t('home.top_navbar.overlay_menu.chapters_11_20') %></a>
+          <ul class="slidedown">
+            <% (11..20).each do |index| %>
+                <li>
+                  <a href="#capitulo<%= index.to_s %>"><%= t('home.body.book.chapter_' + index.to_s + '.title') %></a>
+                </li>
+            <% end %>
+          </ul>
+        </li>
+
+        <li class="slidedown">
+          <a href="#" class="active"><%= t('home.top_navbar.overlay_menu.chapters_21_27') %></a>
+          <ul class="slidedown">
+            <% (21..27).each do |index| %>
+                <li>
+                  <a href="#capitulo<%= index.to_s %>"><%= t('home.body.book.chapter_' + index.to_s + '.title') %></a>
+                </li>
+            <% end %>
           </ul>
         </li>
 
