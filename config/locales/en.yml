@@ -10,6 +10,9 @@ en:
         language: 'Language'
         chapters: 'Chapters'
         social: 'Social'
+        chapters_1_10: '1 - 10'
+        chapters_11_20: '11 - 20'
+        chapters_21_27: '21 - 27'
     body:
       book:
         intro:
@@ -49,8 +52,8 @@ en:
           paragraph_4: '"What!"'
           paragraph_5: '"Draw me a sheep!"'
           paragraph_6: 'I jumped to my feet, completely thunderstruck. I blinked my eyes hard. I looked carefully all around me. And I saw a most extraordinary small person, who stood there examining me with great seriousness. Here you may see the best potrait that, later, I was able to make of him. But my drawing is certainly very much less charming than its model.'
-          paragraph_7: "That, however, is not my fault. The grown-ups discouraged me in my painter's career when I was six years old, and I never learned to draw anything, except boas from the outside and boas from the inside."
-          paragraph_8: 'Now I stared at this sudden apparition with my eyes fairly starting out of my head in astonishment. Remember, I had crashed in the desert a thousand miles from any inhabited region. And yet my little man seemed neither to be straying uncertainly among the sands, nor to be fainting from fatigue or hunger or thirst or fear. Nothing about him gave any suggestion of a child lost in the middle of the desert, a thousand miles from any human habitation. When at last I was able to speak, I said to him:'
+          paragraph_7: 'Here is the best portrait that, later, I managed to make of him.'
+          paragraph_8: "That, however, is not my fault. The grown-ups discouraged me in my painter's career when I was six years old, and I never learned to draw anything, except boas from the outside and boas from the inside. Now I stared at this sudden apparition with my eyes fairly starting out of my head in astonishment. Remember, I had crashed in the desert a thousand miles from any inhabited region. And yet my little man seemed neither to be straying uncertainly among the sands, nor to be fainting from fatigue or hunger or thirst or fear. Nothing about him gave any suggestion of a child lost in the middle of the desert, a thousand miles from any human habitation. When at last I was able to speak, I said to him:"
           paragraph_9: '"But-- what are you doing here?"'
           paragraph_10: 'And in answer he repeated, very slowly, as if he were speaking of a matter of great consequence: "If you please-- draw me a sheep..."'
           paragraph_11: 'When a mystery is too overpowering, one dare not disobey. Absurd as it
@@ -145,8 +148,9 @@ en:
           paragraph_15: 'And one day he said to me: "You ought to make a beautiful drawing, so that the children where you live can see exactly how all this is. That would be very useful to them if they were to travel some day. Sometimes," he added, "there is no harm in putting off a piece of work until another day. But when it is a matter of baobabs, that always means a catastrophe. I knew a planet that was inhabited by a lazy man. He neglected three little bushes..."'
           paragraph_16: 'So, as the little prince described it to me, I have made a drawing of that planet. I do not much like to take the tone of a moralist. But the danger of the baobabs is so little understood, and such considerable risks would be run by anyone who might get lost on an asteroid, that for once I am breaking through my reserve. "Children," I say plainly, "watch out for the baobabs!"'
           paragraph_17: 'My friends, like myself, have been skirting this danger for a long time, without ever knowing it; and so it is for them that I have worked so hard over this drawing. The lesson which I pass on by this means is worth all the trouble it has cost me.'
-          paragraph_18: 'Perhaps you will ask me, "Why are there no other drawing in this book as magnificent and impressive as this drawing of the baobabs?"'
-          paragraph_19: 'The reply is simple. I have tried. But with the others I have not been successful. When I made the drawing of the baobabs I was carried beyond myself by the inspiring force of urgent necessity.'
+          paragraph_18: 'Perhaps you will ask me, "Why are there no other drawing in this book as magnificent and impressive as this drawing of the baobabs?". The reply is simple. I have tried. But with the others I have not been successful. When I made the drawing of the baobabs I was carried beyond myself by the inspiring force of urgent necessity.'
+          paragraph_19: 'The baobabs'
+
         chapter_6:
           title: 'Chapter VI'
           paragraph_1: 'Oh, little prince! Bit by bit I came to understand the secrets of your sad little life... For a long time you had found your only entertainment in the quiet pleasure of looking at the sunset. I learned that new detail on the morning of the fourth day, w hen you said to me: "I am very fond of sunsets. Come, let us go look at a sunset now."'
@@ -226,8 +230,8 @@ en:
         chapter_9:
           title: 'Chapter IX'
           paragraph_1: 'I believe that for his escape he took advantage of the migration of a flock of wild birds. On the morning of his departure he put his planet in perfect order. He carefully cleaned out his active volcanoes. He possessed two active volcanoes; and they were very convenient for heating his breakfast in the morning. He also had one volcano that was extinct. But, as he said, "One never knows!" So he cleaned out the extinct volcano, too. If they are well cleaned out, volcanoes burn slowly and steadily, without any eruptions. Volcanic eruptions are like fires in a chimney.'
-          paragraph_2: 'On our earth we are obviously much too small to clean out our volcanoes. That is why they bring no end of trouble upon us.'
-          paragraph_3: 'The little prince also pulled up, with a certain sense of dejection, the last little shoots of the baobabs. He believed that he would never want to return. But
+          paragraph_2: 'He carefully cleaned out his active volcanoes.'
+          paragraph_3: 'On our earth we are obviously much too small to clean out our volcanoes. That is why they bring no end of trouble upon us. The little prince also pulled up, with a certain sense of dejection, the last little shoots of the baobabs. He believed that he would never want to return. But
                         on this last morning all these familiar tasks seemed very precious to him. And when he watered the flower for the last time, and prepared to place her under the shelter of her glass globe, he realised that he was very close to tears.'
           paragraph_4: '"Goodbye," he said to the flower.'
           paragraph_5: 'But she made no answer.'
@@ -492,8 +496,8 @@ en:
           paragraph_1: 'When one wishes to play the wit, he sometimes wanders a little from the truth. I have not been altogether honest in what I have told you about the lamplighters. And I realize that I run the risk of giving a false idea of our planet to those who do not know it.'
           paragraph_2: 'Men occupy a very small place upon the Earth. If the two billion inhabitants who people its surface were all to stand upright and somewhat crowded together, as they do for some big public assembly, they could easily be put into one public square twenty miles long and twenty miles wide. All humanity could be piled up on a small Pacific islet.'
           paragraph_3: 'The grown-ups, to be sure, will not believe you when you tell them that. They imagine that they fill a great deal of space. They fancy themselves as important as the baobabs. '
-          paragraph_4: 'You should advise them, then, to make their own calculations. They adore fig ures, and that will please them. But do not waste your time on this extra task. It is unnecessary. You have, I know, confidence in me.'
-          paragraph_5: 'When the little prince arrived on the Earth, he was very much surprised not to see any people. He was beginning to be afraid he had come to the wrong planet, when a coil of gold, the color of the moonlight, flashed across the sand.'
+          paragraph_4: 'The little prince was very much surprised not to see any people.'
+          paragraph_5: 'You should advise them, then, to make their own calculations. They adore fig ures, and that will please them. But do not waste your time on this extra task. It is unnecessary. You have, I know, confidence in me. When the little prince arrived on the Earth, he was very much surprised not to see any people. He was beginning to be afraid he had come to the wrong planet, when a coil of gold, the color of the moonlight, flashed across the sand.'
           paragraph_6: '"Good evening," said the little prince courteously.'
           paragraph_7: '"Good evening," said the snake.'
           paragraph_8: '"What planet is this on which I have come down?" asked the little prince.'
@@ -533,8 +537,8 @@ en:
           paragraph_8: '"Goodbye," said the flower.'
         chapter_19:
           title: 'Chapter XIX'
-          paragraph_1: 'After that, the little prince climbed a high mountain. The only mountains he had ever known were the three volcanoes, which came up to his knees. And he used the extinct volcano as a footstool. "From a mountain as high as this one," he said to himself, "I shall be able to see the whole planet at one glance, and all the people..."'
-          paragraph_2: 'But he saw nothing, save peaks of rock that were sharpened like needles.'
+          paragraph_1: 'After that, the little prince climbed a high mountain. The only mountains he had ever known were the three volcanoes, which came up to his knees. And he used the extinct volcano as a footstool. "From a mountain as high as this one," he said to himself, "I shall be able to see the whole planet at one glance, and all the people..." But he saw nothing, save peaks of rock that were sharpened like needles.'
+          paragraph_2: '"What a queer planet. It is altogether dry, and altogether pointed"'
           paragraph_3: '"Good morning," he said courteously.'
           paragraph_4: '"Good morning--Good morning--Good morning," answered the echo.'
           paragraph_5: '"Who are you?" said the little prince.'
@@ -555,7 +559,7 @@ en:
           paragraph_9: 'And here were five thousand of them, all alike, in one single garden!'
           paragraph_10: '"She would be very much annoyed," he said to himself, "if she should see that... she would cough most dreadfully, and she would pretend that she was dying, to avoid being laughed at. And I should be obliged to pretend that I was nursing her back to life-- for if I did not do that, to humble myself also, she would really allow herself to die..."'
           paragraph_11: "Then he went on with his reflections: \"I thought that I was rich, with a flower that was unique in all the world; and all I had was a common rose. A common rose, and three volcanoes that come up to my knees-- and one of them perhaps extinct forever... that doesn't make me a very great prince...\""
-          paragraph_12: 'And he lay down in the grass and cried.'
+          paragraph_12: 'And he lay down on the grass and cried.'
         chapter_21:
           title: 'Chapter XXI'
           paragraph_1: 'It was then that the fox appeared.'
@@ -597,8 +601,8 @@ en:
           paragraph_37: '"One only understands the things that one tames," said the fox. "Men have no more time to understand anything. They buy things all ready made at the shops. But there is no shop anywhere where one can buy friendship, and so men have no friends any more. If you want a friend, tame me..."'
           paragraph_38: '"What must I do, to tame you?" asked the little prince.'
           paragraph_39: '"You must be very patient," replied the fox. "First you will sit down at a little distance from me-- like that-- in the grass. I shall look at you out of the corner of my eye, and you will say nothing. Words are the source of misunderstandings. But you will sit a little closer to me, every day..."'
-          paragraph_40: 'The next day the little prince came back.'
-          paragraph_41: "\"It would have been better to come back at the same hour,\" said the fox. \"If, for example, you come at four o'clock in the afternoon, then at three o'clock I shall begin to be happy. I shall feel happier and happier as the hour advances. At four o'clock, I shall already be worrying and jumping about. I shall show you how happy I am! But if you come at just any time, I shall never know at what hour my heart is to be ready to greet you... One must observe the proper rites...\""
+          paragraph_40: "The next day the little prince came back. \"It would have been better to come back at the same hour,\" said the fox. \"If, for example, you come at four o'clock in the afternoon, then at three o'clock I shall begin to be happy. I shall feel happier and happier as the hour advances. At four o'clock, I shall already be worrying and jumping about. I shall show you how happy I am! But if you come at just any time, I shall never know at what hour my heart is to be ready to greet you... One must observe the proper rites...\""
+          paragraph_41: "If, for example, you come at four o'clock in the afternoon, then at three o'clock I shall begin to be happy."
           paragraph_42: '"What is a rite?" asked the little prince.'
           paragraph_43: '"Those also are actions too often neglected," said the fox. "They are what make one day different from other days, one hour from other hours. There is a rite, for example, among my hunters. Every Thursday they dance with the village girls. So Thursday is a wonderful day for me! I can take a walk as far as the vineyards. But if the hunters danced at just any time, every day would be like every other day, and I should never have any vacation at all."'
           paragraph_45: 'So the little prince tamed the fox. And when the hour of his departure drew near--'
@@ -681,8 +685,8 @@ en:
           paragraph_25: '"Yes," I said to the little prince. "The house, the stars, the desert-- what gives them their beauty is something that is invisible!"'
           paragraph_26: '"I am glad," he said, "that you agree with my fox."'
           paragraph_27: 'As the little prince dropped off to sleep, I took him in my arms and set out walking once more. I felt deeply moved, and stirred. It seemed to me that I was carrying a very fragile treasure. It seemed to me, even, that there was nothing more fragile on all Earth. In the moonlight I looked at his pale forehead, his closed eyes, his locks of hair that trembled in the wind, and I said to myself: "What I see here is nothing but a shell. What is most important is invisible..."'
-          paragraph_28: 'As his lips opened slightly with the suspicious of a half-smile, I said to myself, again: "What moves me so deeply, about this little prince who is sleeping here, is his loyalty to a flower-- the image of a rose that shines through his whole being like the flame of a lamp, even when he is asleep..." And I felt him to be more fragile still. I felt the need of protecting him, as if he himself were a flame that might be extinguished by a little puff of wind...'
-          paragraph_29: 'And, as I walked on so, I found the well, at daybreak.'
+          paragraph_28: 'As his lips opened slightly with the suspicious of a half-smile, I said to myself, again: "What moves me so deeply, about this little prince who is sleeping here, is his loyalty to a flower-- the image of a rose that shines through his whole being like the flame of a lamp, even when he is asleep..." And I felt him to be more fragile still. I felt the need of protecting him, as if he himself were a flame that might be extinguished by a little puff of wind... And, as I walked on so, I found the well, at daybreak.'
+          paragraph_29: "\"What makes the desert beautiful,' said the little prince, 'is that somewhere it hides a well.\""
         chapter_25:
           title: 'Chapter XXV'
           paragraph_1: '"Men," said the little prince, "set out on their way in express trains, but they do not know what they are looking for. Then they rush about, and get excited, and turn round and round..."'
@@ -743,8 +747,8 @@ en:
           paragraph_8: 'I stopped in my tracks, my heart torn asunder; but still I did not understand.'
           paragraph_9: '"Now go away," said the little prince. "I want to get down from the wall."'
           paragraph_10: 'I dropped my eyes, then, to the foot of the wall-- and I leaped into the air. There before me, facing the little prince, was one of those yellow snakes that take just thirty seconds to bring your life to an end. Even as I was digging into my pocked to get out my revolver I made a running step back. But, at the noise I made, the snake let himself flow easily across the sand like the dying spray of a fountain, and, in no apparent hurry, disappeared, with a light metallic sound, among the stones.'
-          paragraph_11: 'I reached the wall just in time to catch my little man in my arms; his face was white as snow.'
-          paragraph_12: '"What does this mean?" I demanded. "Why are you talking with snakes?"'
+          paragraph_11: 'I reached the wall just in time to catch my little man in my arms; his face was white as snow. "What does this mean?" I demanded. "Why are you talking with snakes?"'
+          paragraph_12: '"Now go away," said the little prince. "I want to get down from the wall."'
           paragraph_13: "I had loosened the golden muffler that he always wore. I had moistened his temples, and had given him some water to drink. And now I did not dare ask him any more questions. He looked at me very gravely, and put his arms around my neck. I felt his heart beating like the heart of a dying bird, shot with someone's rifle..."
           paragraph_14: '"I am glad that you have found what was the matter with your engine," he said. "Now you can go back home--"'
           paragraph_15: '"How do you know about that?"'
@@ -817,8 +821,8 @@ en:
           paragraph_82: '"There now-- that is all..."'
           paragraph_83: 'He still hesitated a little; then he got up. '
           paragraph_84: 'He took one step. I could not move.'
-          paragraph_85: 'There was nothing but a flash of yellow close to his ankle. He remained motionless for an instant.'
-          paragraph_86: 'He did not cry out. He fell as gently as a tree falls. There was not even any sound, because of the sand.'
+          paragraph_85: 'There was nothing but a flash of yellow close to his ankle. He remained motionless for an instant. He did not cry out. He fell as gently as a tree falls. There was not even any sound, because of the sand.'
+          paragraph_86: 'He fell as gently as a tree falls.'
         chapter_27:
           title: 'Chapter XXVII'
           paragraph_1: 'And now six years have already gone by...'

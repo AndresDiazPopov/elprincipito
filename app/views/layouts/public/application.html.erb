@@ -10,8 +10,13 @@
       :title => :title, 
       :description => :description,
       :image => image_url('Logo.png')} %>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta charset="UTF-8">
+  <title>El Principito</title>
+  <!-- Meta etiqueta para la descripcion de la web que se va a ver en el buscador -->
+  <meta name="description" content="La mejor web para leer El Principito, de Antoine de Saint-Exupéry, donde quieras. Se adapta a cualquier dispositivo."/>
+  <meta name="keywords" content="El Principito, Antoine de Saint-Exupéry, libro">
+  <!-- Esta linea es para ordenarle al navegador que se dapte al ancho de la pantalla -->
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <%= favicon_link_tag 'favicon.ico' %>
   <!-- Main css styles -->
   <%= stylesheet_link_tag    'public/application', media: 'all', 'data-turbolinks-track' => true %>
@@ -28,11 +33,13 @@
 <body>
 
   <%= render 'layouts/public/topnavbar' %>
+
   <%= yield %>
 
 
   <footer class="module bg-light">
     <%= render 'layouts/public/footer' %>
   </footer>
+
 </body>
 </html>

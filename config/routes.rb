@@ -61,7 +61,7 @@ Rails.application.routes.draw do
 
   # DESCOMENTAR SI HAY PANEL Y TAMBIÉN WEB PÚBLICA
   # Por defecto, el root es la página pública
-  root to: "public/static#index"
+  root to: "public/home#index"
 
   # DESCOMENTAR SI SOLO HAY PANEL Y NO HAY WEB PÚBLICA
   # Si solo hay panel, la raíz lleva directamente al login del panel
