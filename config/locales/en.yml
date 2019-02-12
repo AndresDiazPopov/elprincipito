@@ -10,6 +10,9 @@ en:
         language: 'Language'
         chapters: 'Chapters'
         social: 'Social'
+        chapters_1_10: '1 - 10'
+        chapters_11_20: '11 - 20'
+        chapters_21_27: '21 - 27'
     body:
       book:
         intro:
