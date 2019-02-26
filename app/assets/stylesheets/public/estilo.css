@@ -96,40 +96,7 @@
       background-attachment: fixed*/;
     }
     /*-----------------------------------------------------*/
-    /*ICONOS REDES SOCIALES WEB*/
-    .social{
-      position: fixed;
-      right: 0;
-      top: 49.45px;
-    }
-    .social ul{
-      list-style: none;
-      margin: 5px;
-    }
-    .social ul li a{
-      float: right;
-      display: inline-block;
-      color: #fff;
-      background-color: rgba(0,0,0,0.4);
-      padding: 10px 17.5px;
-      text-decoration: none;
-      -webkit-transition: all 500ms ease;
-      -o-transition: all 500ms ease;
-      transition: all 500ms ease;
-    }
-    .social ul li a:hover{
-      padding: 10px 30px;
-    }
-    .social ul li .icon-facebook:hover{
-      background-color: #3b5998;
-    }
-    .social ul li .icon-instagram:hover{
-      background-color: #8a3ab9;
-    }
-    .social ul li .icon-twitter:hover{
-      background-color: #00abf0;
-    }
-    /*-----------------------------------------------------*/
+
 }
 @font-face {
     font-family: "foxhole";
@@ -148,15 +115,9 @@
   width: 90%;
 }
 /*-----------------------------------------------------*/
-/*Modificar el texto del Libro
-.parrafo p{
-    font-family: 'Alegreya', serif;
-    font-size: 24px;
-}*/
-/*-----------------------------------------------------*/
 /*Para modificar la Imagen pequeña*/
 .logo-movil{
-	width: 150px;
+  width: 150px;
   padding-top: 8px;
 }
 /*-----------------------------------------------------*/
@@ -165,14 +126,7 @@
   width: 245px;
 }
 /*-----------------------------------------------------*/
-/*Modificar la fuente de los Thumbnails*/
-.caption p, .caption a, .parrafo-contacto p, .parrafo-form{
-      font-family: 'Itim', cursive;
-      font-size: 16px;
-      color:#6C2B08;
-      text-align: center;
 
-}
 
 .obeja{
   width: 50%;
@@ -182,22 +136,12 @@
   box-shadow:0px 6px 12px rgba(0, 0, 0, 0.176);
 }
 .separador{
-border: 1px dashed grey; height: 0; width: 50%;
+    border: 1px dashed grey; height: 0; width: 50%;
   
 }
 .contenedor{
   background-color: #fff;
   margin-top: 200px;
-}
-.dropdown-menu{
-    width: 100%;
-
-}
-.dropdown ul:hover{
-  background-color: white;
-}
-.dropdown li:hover{
-  background-color: #000;
 }
 
 #particles-js{
@@ -205,31 +149,6 @@ border: 1px dashed grey; height: 0; width: 50%;
     height: 100%;
     position: fixed;
 }
-
-/*-----------------------------------------------------*/
-/*Modificar color iconos Footer Web*/
-.footer-web i{
-      color: #6C2B08;
-      text-decoration: none;
-}
-/*-----------------------------------------------------*/
-/*Modificar color iconos Footer Web*/
-.footer-web i:hover{
-      color: #FFF;
-      text-decoration: none;
-}
-/*-----------------------------------------------------*/
-/*Modificamos el footer web*/
-.footer-web{
-      text-align: center;     
-}
-footer{
-    background-color: #A0C6EF;
-}
-#sidebar-wrapper{
-  z-index: 2000;
-}
-
 
 
 
