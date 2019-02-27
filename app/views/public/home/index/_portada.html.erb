@@ -2,7 +2,12 @@
   <div class="row">
     <div class="col-xs-12 col-md-2"></div>
     <div class="col-xs-12 col-md-8 mundo">
-      <img src="<%= image_path('imagenes/fuente.png') %>" class="imagenMundo center-block img-responsive" alt="El Principito">
+      <% if 'es' == I18n.locale.to_s %>
+        <img src="<%= image_path('imagenes/titulo.png') %>" class="imagenMundo center-block img-responsive" alt="El Principito">
+      <% end %>
+      <% if 'en' == I18n.locale.to_s %>
+        <img src="<%= image_path('imagenes/title.png') %>" class="imagenMundo center-block img-responsive" alt="El Principito">
+      <% end %>
       <img src="<%= image_path('imagenes/mundo_1.png') %>" class="center-block img-responsive imagenMundo" alt="El Principito y su mundo">
     </div>
     <div class="col-xs-12 col-md-2"></div>
