@@ -2110,23 +2110,26 @@ Responsive Media Querries
 @media only screen and (max-width: 960px) {
 
 	/* Side and overlay nav */
-	.overlay-menu.active {
-		position: absolute;
-	}
-	.aux-navigation-active .wrapper{
-		position: fixed;
-	}
-	.aux-navigation-active .side-navigation-wrapper,
-	.aux-navigation-active .overlay-menu {
-		position: absolute;
-	}
-
-	/*----------------------------*/
+    /*
+   .overlay-menu.active {
+       position: absolute;
+   }
+   .aux-navigation-active .wrapper{
+       position: fixed;
+   }
+   .aux-navigation-active .side-navigation-wrapper,
+   .aux-navigation-active .overlay-menu {
+       position: absolute;
+   }
+    */
+   /*----------------------------*/
+	/*
 	.navbar-custom {
 		position: absolute;
 		top: 0;
 		width: 100%;
 	}
+	*/
 
 }
 
