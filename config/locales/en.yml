@@ -1,5 +1,7 @@
 en:
   home:
+    title:
+      app_name: 'The Little Prince'
     footer:
       instagram: 'Instagram'
       facebook: 'Facebook'

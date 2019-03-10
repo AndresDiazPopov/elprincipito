@@ -1,5 +1,7 @@
 es:
   home:
+    title:
+      app_name: 'El Principito'
     footer:
       instagram: 'Instagram'
       facebook: 'Facebook'

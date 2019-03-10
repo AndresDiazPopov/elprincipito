@@ -121,8 +121,10 @@
 			if (navbar.length > 0 && navbatTrans !== false) {
 				if (topScroll >= 5) {
 					navbar.removeClass('navbar-transparent');
+
 				} else {
 					navbar.addClass('navbar-transparent');
+
 				}
 			}
 		}
