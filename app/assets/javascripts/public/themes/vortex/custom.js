@@ -36,7 +36,7 @@
 		});
 
 		$(window).scroll(function() {
-			if(windowWidth > 960) {
+			if(windowWidth > 0) {
 				navbarAnimation(navbar, moduleHero);
 			}
 		}).scroll();
@@ -121,7 +121,6 @@
 			if (navbar.length > 0 && navbatTrans !== false) {
 				if (topScroll >= 5) {
 					navbar.removeClass('navbar-transparent');
-
 				} else {
 					navbar.addClass('navbar-transparent');
 
