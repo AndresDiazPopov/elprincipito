@@ -1,11 +1,16 @@
-<nav class="navbar navbar-custom navbar-fixed-top navbar-transparent navbar-light">
+<nav class="navbar navbar-custom navbar-fixed-top navbar-transparent navbar-light" id="navbar-logo">
 
   <div class="container">
 
     <div class="navbar-header">
       <!-- YOU LOGO HERE -->
-      <%= link_to root_path, class: "navbar-brand" do %>
-          <%= image_tag 'logo-dark.png', style: 'width:95px;' %>
+      <%= link_to root_path, class: "navbar-brand logo" do %>
+        <% if 'es' == I18n.locale.to_s %>
+          <%= image_tag 'imagenes/elprincipito_logo.png' %>
+        <% end %>
+        <% if 'en' == I18n.locale.to_s %>
+          <%= image_tag 'imagenes/little_prince_logo.png' %>
+        <% end %>
       <% end %>
 
     </div>
@@ -62,3 +67,20 @@
   </div>
 
 </nav>
+
+<script>
+    $(function() {
+        if(!$("#navbar-logo").hasClass("navbar-transparent")){
+            $(".logo").show();
+        }else{
+            $(".logo").hide();
+        }
+        $(window).scroll(function() {
+            if(!$("#navbar-logo").hasClass("navbar-transparent")){
+                $(".logo").show();
+            }else{
+                $(".logo").hide();
+            }
+        });
+    });
+</script>
