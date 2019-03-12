@@ -9,6 +9,7 @@ en:
       year: '2018'
     top_navbar:
       overlay_menu:
+        top: 'Beginning'
         language: 'Language'
         chapters: 'Chapters'
         social: 'Social'
