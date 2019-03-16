@@ -140,9 +140,15 @@
 
 		$('#overlay-menu-hide').on('click', function() {
 			hideMenu();
+            $('#nav li ul').slideUp({duration: 300, easing: 'easeInOutQuart'}).removeClass('open');
 			$('body').removeClass('aux-navigation-active');
 			return false;
 		});
+
+        $('.hide-overlay').on('click', function() {
+            hideMenu();
+            $('#nav li ul').slideUp({duration: 300, easing: 'easeInOutQuart'}).removeClass('open');
+        });
 
 		$(window).keydown(function(e) {
 			if (overlayMenu.hasClass('active')) {
