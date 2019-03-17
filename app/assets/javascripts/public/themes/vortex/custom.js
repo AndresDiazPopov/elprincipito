@@ -185,7 +185,7 @@
 				$('#nav li ul').slideUp({duration: 300, easing: 'easeInOutQuart'});
 				$('#nav li a').removeClass('active');
 				$(this).next().slideToggle({duration: 300, easing: 'easeInOutQuart'}).addClass('open');
-				$(this).addClass('active');
+
 			} else {
 				$('#nav li ul').slideUp({duration: 300, easing: 'easeInOutQuart'}).removeClass('open');
 				$(this).removeClass('active');
