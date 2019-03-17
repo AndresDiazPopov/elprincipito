@@ -13,7 +13,7 @@
 
       <ul id="nav">
         <li>
-          <a href="#inicio" class="active"><%= t('home.top_navbar.overlay_menu.top') %></a>
+          <a href="#inicio" class="active hide-overlay"><%= t('home.top_navbar.overlay_menu.top') %></a>
         </li>
         <li class="slidedown">
           <a href="#" class="active"><%= t('home.top_navbar.overlay_menu.chapters') %></a>
@@ -23,7 +23,7 @@
           <ul class="slidedown">
               <% (1..10).each do |index| %>
                 <li>
-                  <a href="#capitulo<%= index.to_s %>"><%= t('home.body.book.chapter_' + index.to_s + '.title') %></a>
+                  <a href="#capitulo<%= index.to_s %>" class="hide-overlay"><%= t('home.body.book.chapter_' + index.to_s + '.title') %></a>
                 </li>
               <% end %>
           </ul>
@@ -34,7 +34,7 @@
           <ul class="slidedown">
             <% (11..20).each do |index| %>
                 <li>
-                  <a href="#capitulo<%= index.to_s %>"><%= t('home.body.book.chapter_' + index.to_s + '.title') %></a>
+                  <a href="#capitulo<%= index.to_s %>" class="hide-overlay"><%= t('home.body.book.chapter_' + index.to_s + '.title') %></a>
                 </li>
             <% end %>
           </ul>
@@ -45,7 +45,7 @@
           <ul class="slidedown">
             <% (21..27).each do |index| %>
                 <li>
-                  <a href="#capitulo<%= index.to_s %>"><%= t('home.body.book.chapter_' + index.to_s + '.title') %></a>
+                  <a href="#capitulo<%= index.to_s %>" class="hide-overlay"><%= t('home.body.book.chapter_' + index.to_s + '.title') %></a>
                 </li>
             <% end %>
           </ul>
@@ -55,10 +55,10 @@
           <a href="#" class="active"><%= t('home.top_navbar.overlay_menu.social') %></a>
           <ul>
             <li>
-              <%= link_to 'Facebook', 'https://www.facebook.com/El-Principito-1731713937082081/?ref=aymt_homepage_panel', target: '_blank' %>
+              <%= link_to 'Facebook', 'https://www.facebook.com/El-Principito-1731713937082081/?ref=aymt_homepage_panel', class: 'hide-overlay', target: '_blank' %>
             </li>
             <li>
-              <%= link_to 'Instagram', 'https://www.instagram.com/el_principito_libro/', target: '_blank' %>
+              <%= link_to 'Instagram', 'https://www.instagram.com/el_principito_libro/', class: 'hide-overlay', target: '_blank' %>
             </li>
           </ul>
         </li>
@@ -71,19 +71,19 @@
                 <li>
                   <% if 'es' == I18n.locale.to_s %>
                       <% if language.name == 'Español' %>
-                          <%= link_to url_for(params.merge({locale: language.translation.locale.to_s})) do %>
+                          <%= link_to url_for(params.merge({locale: language.translation.locale.to_s})), class: 'hide-overlay' do %>
                               <strong><%= language.name %></strong>
                           <% end %>
                       <% else %>
-                          <%= link_to language.name, url_for(params.merge({locale: 'en'})) %>
+                          <%= link_to language.name, url_for(params.merge({locale: 'en'})), class: 'hide-overlay' %>
                       <% end %>
                   <% else %>
                       <% if language.name == 'English' %>
-                          <%= link_to url_for(params.merge({locale: language.translation.locale.to_s})) do %>
+                          <%= link_to url_for(params.merge({locale: language.translation.locale.to_s})), class: 'hide-overlay' do %>
                               <strong><%= language.name %></strong>
                           <% end %>
                       <% else %>
-                          <%= link_to language.name, url_for(params.merge({locale: 'es'})) %>
+                          <%= link_to language.name, url_for(params.merge({locale: 'es'})), class: 'hide-overlay' %>
                       <% end %>
                   <% end %>
                 </li>
