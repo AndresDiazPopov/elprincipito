@@ -19,7 +19,7 @@
           <a href="#" class="active"><%= t('home.top_navbar.overlay_menu.chapters') %></a>
         </li>
         <li class="slidedown">
-          <a href="#" class="active"><%= t('home.top_navbar.overlay_menu.chapters_1_10') %></a>
+          <a href="#" class=""><%= t('home.top_navbar.overlay_menu.chapters_1_10') %></a>
           <ul class="slidedown">
               <% (1..10).each do |index| %>
                 <li>
@@ -30,7 +30,7 @@
         </li>
 
         <li class="slidedown">
-          <a href="#" class="active"><%= t('home.top_navbar.overlay_menu.chapters_11_20') %></a>
+          <a href="#" class=""><%= t('home.top_navbar.overlay_menu.chapters_11_20') %></a>
           <ul class="slidedown">
             <% (11..20).each do |index| %>
                 <li>
@@ -41,7 +41,7 @@
         </li>
 
         <li class="slidedown">
-          <a href="#" class="active"><%= t('home.top_navbar.overlay_menu.chapters_21_27') %></a>
+          <a href="#" class=""><%= t('home.top_navbar.overlay_menu.chapters_21_27') %></a>
           <ul class="slidedown">
             <% (21..27).each do |index| %>
                 <li>
@@ -52,7 +52,7 @@
         </li>
 
         <li class="slidedown">
-          <a href="#" class="active"><%= t('home.top_navbar.overlay_menu.social') %></a>
+          <a href="#" class=""><%= t('home.top_navbar.overlay_menu.social') %></a>
           <ul>
             <li>
               <%= link_to 'Facebook', 'https://www.facebook.com/El-Principito-1731713937082081/?ref=aymt_homepage_panel', class: 'hide-overlay', target: '_blank' %>
@@ -64,7 +64,7 @@
         </li>
 
         <li class="slidedown">
-          <a href="#" class="active"><%= t('home.top_navbar.overlay_menu.language') %></a>
+          <a href="#" class=""><%= t('home.top_navbar.overlay_menu.language') %></a>
           <ul>
             <li>
               <% Languages::Search.call(state: 'enabled').each do |language| %>
