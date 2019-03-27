@@ -5,12 +5,12 @@
 # unless any hosts have the primary property set.
 # Don't declare `role :all`, it's a meta role
 
-set :application,                       ENV['app_name'] || 'APP_NAME'
+set :application,                       ENV['elprincipito'] || 'elprincipito'
 set :app_name,                          "#{fetch(:application)}".downcase.strip
 
 set :sidekiq_env,                       "#{fetch(:rails_env)}"
 
-set :branch,                            ENV['branch'] || 'master'
+set :branch,                            ENV['branch'] || 'config-deploy'
 
 # Default deploy_to directory is /var/www/my_app
 set :deploy_to, "/srv/rails/#{fetch(:app_name)}"
@@ -33,11 +33,11 @@ set :deploy_to, "/srv/rails/#{fetch(:app_name)}"
 #    auth_methods: %w(password)
 #  }
 # and/or per server
-server '52.58.251.219',
-  user: 'deploy',
+server 'ec2-18-184-154-208.eu-central-1.compute.amazonaws.com',
+  user: 'deployer',
   roles: %w{web app db},
   ssh_options: {
-    user: 'deploy', # overrides user setting above
+    user: 'deployer', # overrides user setting above
     forward_agent: true,
     auth_methods: %w(publickey password)
     # password: 'please use keys'

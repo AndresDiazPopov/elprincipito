@@ -1,30 +1,31 @@
 # config valid only for Capistrano 3.1
 lock '3.8.2'
 
-set :repo_url, 'git@bitbucket.org:softwhisper/backend-template.git'
+set :repo_url, 'git@github.com:AndresDiazPopov/elprincipito.git'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
-set :branch, ENV['branch'] || 'master'
+set :branch, ENV['branch'] || 'develop'
 
 set :user, "deployer"
 
 set :use_sudo, false
 
-set :rails_env, "production"
+set :rails_env, "staging"
 
 set :ssh_options, { :forward_agent => true }
 
 set :rvm_type, :user
 
-set :rvm_ruby_version, '2.3.0@BackendTemplate'
+set :rvm_ruby_version, '2.3.0@elprincipito'
 
-set :slackistrano, {
-  channel: '#APP-ci',
-  webhook: 'https://hooks.slack.com/............',
-  klass: Slackistrano::CustomMessaging
-}
+#set :slackistrano, {
+#  channel: '#APP-ci',
+#  webhook: 'https://hooks.slack.com/............',
+#
+#  klass: Slackistrano::CustomMessaging
+#}
 
 # Default value for :format is :pretty
 # set :format, :pretty

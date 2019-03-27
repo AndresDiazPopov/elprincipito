@@ -7,7 +7,7 @@ namespace :db do
       end
     end
 
-    seed_data_files = %w[admin_user languages]
+    seed_data_files = %w[admin_user]
 
     task :seed_data => :environment do
       seed_data_files.each do |filename|
