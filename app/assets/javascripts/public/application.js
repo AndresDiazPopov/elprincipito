@@ -26,11 +26,11 @@
 //= require public/themes/vortex/custom.js
 //= require public/themes/vortex/gmaps.js
 //= require public/themes/vortex/jquery.easing.1.3.js
-//= require public/themes/vortex/jquery.fitvids.js
-//= require public/themes/vortex/jquery.magnific-popup.min.js
-//= require public/themes/vortex/jquery.mb.YTPlayer.min.js
-//= require public/themes/vortex/jquery.simple-text-rotator.min.js
+/*//= require public/themes/vortex/jquery.fitvids.js*/
+/*//= require public/themes/vortex/jquery.magnific-popup.min.js*/
+/*//= require public/themes/vortex/jquery.mb.YTPlayer.min.js*/
+/*//= require public/themes/vortex/jquery.simple-text-rotator.min.js*/
 //= require public/themes/vortex/jquery-2.2.4.min.js
 //= require public/themes/vortex/smoothscroll.js
-//= require public/themes/vortex/wow.min.js
+/*//= require public/themes/vortex/wow.min.js*/
 //= require public/themes/vortex/page-loader.js

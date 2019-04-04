@@ -12,6 +12,10 @@ development:
   <<: *default
   socket: /tmp/mysql.sock
 
+staging:
+  <<: *default
+  socket: /var/run/mysqld/mysqld.sock
+
 test:
   <<: *default
   adapter: sqlite3
