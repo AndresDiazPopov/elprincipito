@@ -10,7 +10,7 @@ set :app_name,                          "#{fetch(:application)}".downcase.strip
 
 set :sidekiq_env,                       "#{fetch(:rails_env)}"
 
-set :branch,                            ENV['branch'] || 'config-deploy'
+set :branch,                            ENV['branch'] || 'master'
 
 # Default deploy_to directory is /var/www/my_app
 set :deploy_to, "/srv/rails/#{fetch(:app_name)}"
