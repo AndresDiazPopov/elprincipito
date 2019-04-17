@@ -15,11 +15,11 @@ class Public::PublicController < ApplicationController
 
   def set_locale_according_to_domain
 
-    if request.host == 'libroelprincipito'
+    if request.host == 'libroelprincipito.com'
       I18n.locale = :es
     end
 
-    if request.host == 'thelittleprincebook'
+    if request.host == 'thelittleprincebook.com'
       I18n.locale = :en
     end
 
