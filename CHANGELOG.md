@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [1.0.2] (2019-04-22)
+
+### Added
+- EP-49: Integrado Google Analytics
+
 ## [1.0.1] (2019-04-17)
 
 ### Added
