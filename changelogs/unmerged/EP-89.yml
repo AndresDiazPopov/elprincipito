@@ -1,0 +1,3 @@
+action: Fixed
+message: No está teniendo en cuenta el parámetro locale para setear los idiomas
+issue: EP-89
