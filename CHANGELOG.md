@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [1.0.3] (2019-11-30)
+### Fixed
+- EP-89: No está teniendo en cuenta el parámetro locale para setear los idiomas
+
 ## [1.0.2] (2019-04-22)
 
 ### Added
