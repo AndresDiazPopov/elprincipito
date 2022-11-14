@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -8,7 +8,7 @@ gem 'font-awesome-rails', '4.7.0.1'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
-gem 'mysql2', '0.3.18'
+gem "mysql2", "0.3.18"
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
@@ -62,7 +62,7 @@ gem 'capistrano-rvm'
 gem 'capistrano-bundler'
 gem 'capistrano-rails'
 
-gem "paperclip", "~> 4.3"
+gem 'paperclip', git: 'https://github.com/sd/paperclip', branch: 'remove-mimemagic'
 gem 'aws-sdk', '< 2.0'
 
 gem 'counter_culture'
