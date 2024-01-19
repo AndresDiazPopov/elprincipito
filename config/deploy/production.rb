@@ -33,7 +33,7 @@ set :deploy_to, "/srv/rails/#{fetch(:app_name)}"
 #    auth_methods: %w(password)
 #  }
 # and/or per server
-server 'ec2-18-184-154-208.eu-central-1.compute.amazonaws.com',
+server 'ec2-3-71-115-175.eu-central-1.compute.amazonaws.com',
   user: 'deployer',
   roles: %w{web app db},
   ssh_options: {
